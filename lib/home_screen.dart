@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Hero(
                   tag: "text",
                   child: CupertinoTextField(
+                    decoration: const BoxDecoration(color: textColor),
                     style: const TextStyle(color: themeColorDark),
                     placeholder: "Enter Text To Spell Check!",
                     autocorrect: false,

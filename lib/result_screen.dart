@@ -32,11 +32,11 @@ class _ResultScreenState extends State<ResultScreen> {
                 child: const Hero(
                   tag: "icon",
                   child: CircleAvatar(
-                    radius: 70,
+                    radius: 80,
                     backgroundColor: themeColorLight,
                     child: Icon(
                       CupertinoIcons.pencil_outline,
-                      size: 70,
+                      size: 80,
                       color: Colors.greenAccent,
                     ),
                   ),
@@ -47,6 +47,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 child: Hero(
                   tag: "text",
                   child: CupertinoTextField(
+                    decoration: const BoxDecoration(color: textColor),
                     readOnly: true,
                     controller: _controller,
                     style: const TextStyle(color: themeColorDark),
@@ -57,6 +58,18 @@ class _ResultScreenState extends State<ResultScreen> {
                   ),
                 ),
               ),
+              CupertinoButton(
+                borderRadius: const BorderRadius.all(Radius.circular(50)),
+                color: themeColorDark,
+                disabledColor: themeColorDark,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Icon(
+                  CupertinoIcons.reply,
+                  color: textColor,
+                ),
+              )
             ],
           ),
         ),
