@@ -36,7 +36,7 @@ class _ResultScreenState extends State<ResultScreen> {
                     backgroundColor: themeColorLight,
                     child: Icon(
                       CupertinoIcons.pencil_outline,
-                      size: 80,
+                      size: 50,
                       color: Colors.greenAccent,
                     ),
                   ),
@@ -63,6 +63,11 @@ class _ResultScreenState extends State<ResultScreen> {
                 color: themeColorDark,
                 disabledColor: themeColorDark,
                 onPressed: () {
+                  FocusScopeNode currentFocus = FocusScope.of(context);
+
+                  if (!currentFocus.hasPrimaryFocus) {
+                    currentFocus.unfocus();
+                  }
                   Navigator.pop(context);
                 },
                 child: const Icon(

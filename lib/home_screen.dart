@@ -52,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: const BoxDecoration(color: textColor),
                     style: const TextStyle(color: themeColorDark),
                     placeholder: "Enter Text To Spell Check!",
+                    placeholderStyle: const TextStyle(color: themeColorDark),
                     autocorrect: false,
                     cursorColor: themeColorLight,
                     onChanged: (value) {
@@ -71,6 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 disabledColor: themeColorDark,
                 onPressed: isNextClickable
                     ? () {
+                        FocusScopeNode currentFocus = FocusScope.of(context);
+
+                        if (!currentFocus.hasPrimaryFocus) {
+                          currentFocus.unfocus();
+                        }
                         Navigator.push(
                           context,
                           CupertinoPageRoute(
