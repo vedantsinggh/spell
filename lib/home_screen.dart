@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               CupertinoButton(
                 borderRadius: const BorderRadius.all(Radius.circular(50)),
-                color: themeColorLight,
+                color: themeColorDark,
                 disabledColor: themeColorDark,
                 onPressed: isNextClickable
                     ? () {
